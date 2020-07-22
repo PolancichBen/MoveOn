@@ -1,11 +1,12 @@
 import React from 'react';
+import PosExpenseIndiv from './posExpenseIndiv.jsx';
 
 const PosExpensesMap = (props) => (
   // Map through Neg Expenses array
   props.posExpenses.map((expense,i) => {
     return (
       <div key={i}>
-        Each Pos Expenses Go!
+        <PosExpenseIndiv info={expense} />
       </div>
     )
   })
