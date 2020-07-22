@@ -9,12 +9,13 @@ class Main extends React.Component {
     super(props)
     this.state = {
       opening: false,
-      loggedin: false,
-      signedUp: false,
       main: true,
       closing: false,
+      
+      loggedin: false,
+      signedUp: false,
       mainSalary: 100000,
-      mainNeg: null,
+      mainNeg: 50000,
       mainLocation: 35401,
     }
     this.passUpLocalAndSalary = this.passUpLocalAndSalary.bind(this);
@@ -40,7 +41,7 @@ class Main extends React.Component {
     } else if (this.state.main) {
       return (
         <div>
-          <MainPage />
+          <MainPage salary={this.state.mainSalary} location={this.state.mainLocation} negative={this.state.mainNeg} />
         </div>
       )
     } else if (this.main.closing) {
