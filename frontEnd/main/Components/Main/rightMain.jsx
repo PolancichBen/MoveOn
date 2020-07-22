@@ -17,6 +17,7 @@ const RightMain = (props) =>{
       <div className="moveOnBtn">
         {/* Move On Button */}
         Move On BTN
+        <button onClick={(event)=>props.moveOn(event)}>Move On!</button>
       </div>
     </div>
   )

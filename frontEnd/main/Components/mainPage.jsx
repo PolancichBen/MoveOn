@@ -22,7 +22,7 @@ class MainPage extends React.Component{
     this.addANewPositive = this.addANewPositive.bind(this);
     this.handleExpenseSubmission = this.handleExpenseSubmission.bind(this);
     this.handleExpenseChanges= this.handleExpenseChanges.bind(this);
-
+    this.handleMovingOn = this.handleMovingOn.bind(this)
   }
 
   // Need to handle API Calls Here
@@ -65,6 +65,11 @@ class MainPage extends React.Component{
     }
   }
 
+  handleMovingOn(event){
+    event.preventDefault();
+    this.props.moveOn();
+  }
+
   render(){
     if (this.state.addNeg === false && this.state.addPos === false){
     return (
@@ -80,7 +85,7 @@ class MainPage extends React.Component{
         </div>
         {/* Weather, Options, and Move On Component */}
         <div className="rightMainContainer">
-        <RightMain addDebit={this.addANewNegative} addCredit={this.addANewPositive}/>
+        <RightMain moveOn={this.handleMovingOn} addDebit={this.addANewNegative} addCredit={this.addANewPositive}/>
         </div>
       </div>
     )
