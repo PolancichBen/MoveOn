@@ -1,0 +1,57 @@
+Build HTML Structure
+Build App Structure
+Create Server
+Create DB
+Add API's
+Hook Up Info from API - END OF DAY 1
+Basic CSS
+Add State and finish App
+Functionality
+Polish CSS - END OF DAY 2
+
+
+Established Milestones:
+----------------------
+
+App Structure Complete
+
+Basic CSS Complete
+
+API's Complete
+ ------------------------- MILE 1
+Functionality Complete
+
+Server Routes Complete
+
+DB Complete
+-------------------------- Mile 2
+Another round of CSS Complete
+
+BARE MINIMUM COMPLETE ---- Mile 3
+ADVANCED -----
+
+Authentication Complete
+-------------------------- Mile 4
+More difficult API's
+
+REDUX
+
+Birds Background
+
+
+
+
+
+Job Information API - Salaries (Indeed Scraper) https://www.npmjs.com/package/indeed-scraper (Salaries) [https://opendata.stackexchange.com/questions/4790/average-job-salary-by-title-location-etc-us-or-intl] (Glassdoor) [https://www.glassdoor.com/developer/index.htm]
+Location Information API - Taxes/ Gas (Taxes) [https://developer.avalara.com/api-reference/avatax/rest/v2/methods/TaxContent/DownloadTaxRatesByZipCode/] (Gas) [https://collectapi.com/api/gasPrice/gas-prices-api]
+
+Weather Information - Current Weather (Current Weather) [https://rapidapi.com/ClimaCell/api/climacell] (npm package) [https://www.npmjs.com/package/openweather-apis]
+Images API - City Images  (Images) [https://www.pexels.com/api/?locale=en-US]
+
+// cool frameworks
+https://designrevision.com/docs/shards-react/getting-started 
+https://react-bootstrap.github.io/getting-started/introduction/
+
+
+// backgrounds
+https://www.vantajs.com/?effect=birds

@@ -1,0 +1,59 @@
+Functions
+Total +
+Total -
+
+Taking home a yr
+Taking home a mo
+Taking home a wk
+Taking home a dy
+
+if over
+How much over
+
+
+Insurance Total
+Bill Total
+
+Data:
+
+(+)
+Given Salary:
+
+Credits:
+
+
+(-)
+Rent: 
+
+Standard Bills:
+> Add Insurance
+  >> Dropdown
+  > Name
+  > Cost /mo
+> Add Bill
+  > Name
+  > Cost /mo
+
+Examples
+Car Insurance:
+Phone Bill:
+Renters Insurance:
+Gym Bill
+Security
+
+
+Standard Utilies:
+Water
+Power
+Gas
+Electrical
+Garbage
+Sewer
+Cable/Internet
+
+Debits:
+> Add Debit
+  >>Dropdown
+  >Name
+  > Cost(one time)
+

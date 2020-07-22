@@ -1,1 +1,175 @@
+html{
+margin: 0;
+width: 100%;
+height: 100%;
+padding: 0;
+}
 
+body{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.mainContainer{
+  border: 2px solid green;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: -webkit-fill-available;
+}
+
+.localInfoContainer{
+  border: 2px dashed red;
+  height: 100%;
+  width: 25%;
+}
+
+.billsContainer{
+  border: 2px dashed blue;
+  width: 50%;
+  height: 100%;
+}
+
+.rightMainContainer{
+  border: 2px dashed yellow;
+  height: 100%;
+  width: 25%;
+}
+
+.expensesHeader{
+  border: 2px dashed red;
+  width: 100%;
+}
+
+.expensesMain{
+  border: 2px solid black;
+  display: flex;
+  height: 200px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.constantBillsMain{
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.constant{
+  border: 2px dashed palevioletred;
+  height: 50%;
+  width: 100%;
+}
+
+.dynamicBillsMain{
+  border: 2px solid blueviolet;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.dynamic{
+  border: 2px dashed greenyellow;
+  height: 25%;
+  width: 100%;
+}
+
+.spacer{
+  height: 450px;
+  width: 100%;
+}
+
+.expensesBottomContainer{
+  border: 2px dashed green;
+  width: 100%;
+}
+
+.expensesContainer{
+  border: 2px solid purple;
+  display: flex;
+  height: 500px;
+  width: 100%;
+}
+
+.expensesNegativeMapContainer{
+  border: 2px dashed red;
+  width: 50%;
+  height: 100%;
+
+}
+
+.expensesPositiveMapContainer{
+  border: 2px dashed green;
+  width: 50%;
+  height: 100%;
+}
+
+.rightMainInnerContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.weatherAPIContainer{
+  border: 2px dashed red;
+  height: 60px;
+  width: 100%;
+
+}
+
+.weatherToOptionsSpacer{
+  height: 240px;
+  width: 100%;
+}
+
+.optionsContainer{
+  border: 2px dashed blue;
+  height: 450px;
+  width: 100%;
+}
+
+.optionsToMoveOnBTNSpacer{
+  height: 440px;
+  width: 100%;
+}
+
+.moveOnBtn{
+  border: 2px dashed green;
+  height: 65px;
+  width: 100%;
+}
+
+.localInfoInnerContainer{
+  border: 2px dashed green;
+  height: 100%;
+  width: 100%;
+}
+
+.localInfoTitle{
+  border: 2px dashed purple;
+  width: 100%;
+  height: 40px;
+}
+
+.localInfoReviewsContainer{
+  border: 2px dashed gold;
+  width: 100%;
+  height: 600px;
+}
+
+.localInfoSchoolAndNeighbourHoodContainer{
+  border: 2px dashed blue;
+  width: 100%;
+  height: 300px;
+}
+
+.localInfoTaxesAndCrimeContainer{
+  border: 2px dashed cyan;
+  width: 100%;
+  height: 305px;
+}
