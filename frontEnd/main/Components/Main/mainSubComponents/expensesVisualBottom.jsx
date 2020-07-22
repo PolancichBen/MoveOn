@@ -6,12 +6,16 @@ const ExpensesBottom = (props) =>{
   return (
     <div className="expensesContainer">
       <div className="expensesNegativeMapContainer">
-        <div>Neg Title</div>
+        <div>
+          <p> DEBITS (-) </p>
+        </div>
         {/* - map Component */}
         <NegExpensesMap negExpenses={props.negExpenses}/>
       </div>
       <div className="expensesPositiveMapContainer">
-        <div>Pos Title</div>
+        <div>
+        <p> CREDITS (+) </p>
+        </div>
         {/* + map Component */}
         <PosExpensesMap posExpenses={props.posExpenses}/>
       </div>

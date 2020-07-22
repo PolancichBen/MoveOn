@@ -7,13 +7,13 @@ const BillsMain = (props) =>{
     <div>
       <div className="expensesHeader">
       {/* Header Main */}
-      <ExpensesHeader positive={props.positive} negative={props.negative}/>
+      <ExpensesHeader positive={props.salary} debits={props.debits} negative={props.negative}/>
       </div>
       <div className="spacer">
       </div>
       <div className="expensesBottomContainer">
       {/* Expense Report */}
-      <ExpensesBottom posExpenses={props.debitsArr} negExpenses={props.expensesArr} />
+      <ExpensesBottom posExpenses={props.expensesArr} negExpenses={props.debitsArr} />
       </div>
     </div>
   )

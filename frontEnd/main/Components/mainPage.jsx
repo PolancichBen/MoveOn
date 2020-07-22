@@ -10,46 +10,62 @@ class MainPage extends React.Component{
       salary: this.props.salary,
       location: this.props.location,
       negatives: this.props.negative,
-      expensesArr: ['Test -'],
-      debitsArr: ['Test +'],
+      postives: 0,
+      expensesArr: [['Salary',this.props.salary]],
+      debitsArr: [],
       addNeg:false,
       addPos:false,
+      expenseToBeAdded: 0,
+      expenseToBeAddedName: null,
     }
     this.addANewNegative = this.addANewNegative.bind(this);
     this.addANewPositive = this.addANewPositive.bind(this);
     this.handleExpenseSubmission = this.handleExpenseSubmission.bind(this);
+    this.handleExpenseChanges= this.handleExpenseChanges.bind(this);
 
   }
 
   // Need to handle API Calls Here
 
-  addANewNegative(info){
-    console.log('Negative Expense',info)
-      this.setState({
-        addNeg:true
-      })
-  }
+  addANewNegative(info){ this.setState({ addNeg:true }) }
+  addANewPositive(info){ this.setState({ addPos:true }) }
 
-  addANewPositive(info){
-    console.log('Postive Expense',info)
+  handleExpenseChanges(info){
+    if (info.name === "name"){
       this.setState({
-        addPos:true
+        expenseToBeAddedName: info.value
       })
+    } if (info.name === "creditAmt" || info.name === "debitAmt"){
+      this.setState({
+        expenseToBeAdded: info.value
+      })
+    }
   }
 
   handleExpenseSubmission(event,info){
     event.preventDefault()
-    console.log('Expense Submission',info)
-    this.setState({
-      addNeg:false,
-      addPos:false
-    })
+    if (info === 'Positive'){
+      let newPostiveAmt = parseInt(this.state.postives) + parseInt(this.state.expenseToBeAdded);
+      let buildingNewPositiveArr = this.state.debitsArr.concat([[this.state.expenseToBeAddedName,parseInt(this.state.expenseToBeAdded)]]);
+      this.setState({
+        postives: newPostiveAmt,
+        debitsArr:buildingNewPositiveArr,
+        addPos:false
+      })
+      this.props.updatePosAndNeg(info,newPostiveAmt)
+    } else if (info === 'Negative'){
+      let newNegativeAmt = parseInt(this.state.negatives) + parseInt(this.state.expenseToBeAdded);
+      let buildingNewNegativeArr =this.state.expensesArr.concat([[this.state.expenseToBeAddedName,parseInt(this.state.expenseToBeAdded)]])
+      this.setState({
+        negatives: newNegativeAmt,
+        expensesArr:buildingNewNegativeArr,
+        addNeg:false
+      })
+      this.props.updatePosAndNeg(info,newNegativeAmt)
+    }
   }
 
-
-
   render(){
-    console.log(this.props)
     if (this.state.addNeg === false && this.state.addPos === false){
     return (
       <div className="mainContainer">
@@ -60,11 +76,11 @@ class MainPage extends React.Component{
         {/* Bills Component */}
         <div className="billsContainer">
           {/* Need to pass down neg and pos expenses */}
-        <BillsMain positive={this.state.salary} negative={this.state.negatives} expensesArr={this.state.expensesArr} debitsArr={this.state.debitsArr} />
+        <BillsMain salary={this.state.salary} debits={this.state.postives} negative={this.state.negatives} expensesArr={this.state.expensesArr} debitsArr={this.state.debitsArr} />
         </div>
         {/* Weather, Options, and Move On Component */}
         <div className="rightMainContainer">
-        <RightMain addDebit={this.addANewPositive} addCredit={this.addANewNegative}/>
+        <RightMain addDebit={this.addANewNegative} addCredit={this.addANewPositive}/>
         </div>
       </div>
     )
@@ -73,10 +89,11 @@ class MainPage extends React.Component{
       return (
         <div>
           add pos
-          <form onSubmit={(event)=>this.handleExpenseSubmission(event)}>
+          <form onSubmit={(event)=>this.handleExpenseSubmission(event,'Positive')}>
             <label>
               Name of Debit:
-              <input type="text" name="debit"/>
+              <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="name"/>
+              <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="debitAmt"/>
             </label>
             <input type="submit" name="submit"/>
           </form>
@@ -86,10 +103,11 @@ class MainPage extends React.Component{
       return (
         <div>
           add neg
-          <form onSubmit={(event)=>this.handleExpenseSubmission(event)}>
+          <form onSubmit={(event)=>this.handleExpenseSubmission(event,'Negative')}>
             <label>
               Name of Credit:
-              <input type="text" name="credit"/>
+              <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="name"/>
+              <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="creditAmt"/>
             </label>
             <input type="submit" name="submit"/>
           </form>
