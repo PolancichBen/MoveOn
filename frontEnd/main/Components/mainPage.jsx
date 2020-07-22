@@ -10,8 +10,8 @@ class MainPage extends React.Component{
       salary: this.props.salary,
       location: this.props.location,
       negatives: this.props.negative,
-      expensesArr: [],
-      debitsArr: [],
+      expensesArr: ['Test -'],
+      debitsArr: ['Test +'],
     }
   }
 

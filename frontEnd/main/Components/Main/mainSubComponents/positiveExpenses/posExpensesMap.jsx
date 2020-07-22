@@ -1,12 +1,14 @@
 import React from 'react';
 
-const PosExpensesMap = (props) =>{
+const PosExpensesMap = (props) => (
   // Map through Neg Expenses array
-  return (
-    <div>
-      Pos Expenses Go!
-    </div>
-  )
-}
+  props.posExpenses.map((expense,i) => {
+    return (
+      <div key={i}>
+        Each Pos Expenses Go!
+      </div>
+    )
+  })
+)
 
 export default PosExpensesMap;
