@@ -3,7 +3,15 @@ import React from 'react';
 const Options = (props) =>{
   return (
     <div>
-      Options Main Go!
+      <div>
+      Options Title Go!
+      </div>
+      <div>
+        <button onClick={()=>props.addCredit()}> Add a New Credit or (+)</button>
+      </div>
+      <div>
+        <button onClick={()=>props.addDebit()}> Add a New Debit/Bill or (-)</button>
+      </div>
     </div>
   )
 }

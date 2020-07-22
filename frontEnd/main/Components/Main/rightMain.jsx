@@ -1,7 +1,7 @@
 import React from 'react';
 import Options from './rightMainSubComponents/options.jsx'
 
-const RightMain = () =>{
+const RightMain = (props) =>{
   return (
     <div className="rightMainInnerContainer">
       <div className="weatherAPIContainer">
@@ -11,7 +11,7 @@ const RightMain = () =>{
       <div className="weatherToOptionsSpacer"></div>
       <div className="optionsContainer">
         {/* Options Main */}
-        <Options />
+        <Options addDebit={props.addDebit} addCredit={props.addCredit}/>
       </div>
       <div className="optionsToMoveOnBTNSpacer"></div>
       <div className="moveOnBtn">
