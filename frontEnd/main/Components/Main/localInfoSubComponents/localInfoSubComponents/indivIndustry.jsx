@@ -1,14 +1,14 @@
 import React from 'react';
 
-const LocalReviews = (props) =>{
-  console.log('Local Information Props',props)
+const IndivIndustry = (props) =>{
+  console.log('Indiv Industries Props',props)
   return (
     <div>
-      Information GO!
+      Indiv Industries GO!
     <div>{/* Average Info */}</div>  
     <div>{/* Industries map */}</div>
     </div>
   )
 }
 
-export default LocalReviews;
+export default IndivIndustry;

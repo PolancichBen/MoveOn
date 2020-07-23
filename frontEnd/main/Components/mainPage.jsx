@@ -26,7 +26,9 @@ class MainPage extends React.Component{
   }
 
   // Need to handle API Calls Here
-
+  componentDidMount(){
+    // this.props.getAllInfo();
+  }
 
 
   addANewNegative(info){ this.setState({ addNeg:true }) }
@@ -78,7 +80,8 @@ class MainPage extends React.Component{
       <div className="mainContainer">
         {/* Local Info Component */}
         <div className="localInfoContainer">
-        <LocalInfo cityName={this.props.cityName}/>
+  
+        <LocalInfo cityName={this.props.cityName} taxInformation={this.props.taxInformation} schoolInformation={this.props.schoolInformation} crimeLevel={this.props.crimeLevel} localInformation={this.props.localInformation}/>
         </div>
         {/* Bills Component */}
         <div className="billsContainer">

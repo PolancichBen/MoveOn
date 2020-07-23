@@ -12,13 +12,13 @@ const LocalInfo = (props) => {
         <p>{props.cityName}</p>
       </div>
       <div className="localInfoReviewsContainer">
-        <LocalReviews />
+        <LocalReviews localInformation={props.localInformation}/>
       </div>
       <div className="localInfoSchoolAndNeighbourHoodContainer">
-        <SchoolAndNeighbourhood />
+        <SchoolAndNeighbourhood schools={props.schoolInformation}/>
       </div>
       <div className="localInfoTaxesAndCrimeContainer">
-        <TaxesAndCrime />
+        <TaxesAndCrime taxes={props.taxInformation} crime={props.crimeLevel}/>
       </div>
     </div>
   )

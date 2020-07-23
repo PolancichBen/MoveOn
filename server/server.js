@@ -26,19 +26,17 @@ weather.setUnits('imperial');
 weather.setAPPID(weatherAPIkey)
 
 app.get('/weather', (req, res) => {
-  console.log(req.query.zip)
-  //need to send zipcode, or city, or use googles coordinate thing
   let zip = req.query.zip;
   weather.setZipCode(zip);
-  // weather.getAllWeather((err, JSONObj) => {
-  //   if (err) {
-  //     console.error('Bad Hit', err)
-  //     res.status(400).send('no good',err)
-  //   } else {
-  //     res.status(200).send(JSONObj)
-  //   }
-  // })
-  res.status(200).send('ok')
+  weather.getAllWeather((err, JSONObj) => {
+    if (err) {
+      console.error('Bad Hit', err)
+      res.status(400).send('no good',err)
+    } else {
+      res.status(200).send(JSONObj)
+    }
+  })
+  // res.status(200).send('ok')
 })
 
 
