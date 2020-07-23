@@ -48,6 +48,7 @@ class Main extends React.Component {
     this.getTaxes = this.getTaxes.bind(this);
     this.getSchools = this.getSchools.bind(this);
     this.getCrime = this.getCrime.bind(this);
+    this.getLocalInfo = this.getLocalInfo.bind(this);
   }
 
   //////////////////////////////////////////////////
@@ -96,7 +97,7 @@ class Main extends React.Component {
       // })
     })
     .then(()=>{
-      // this.getCrime()
+      // this.getLocalInfo()
     })
     .catch((err)=>{
       console.log('Issue with Get Req',err)
@@ -196,6 +197,35 @@ class Main extends React.Component {
       /*
       results.data
       .themes[0].crimeIndexTheme.indexVariable[0].category //returns string of level of crime
+      */
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  getLocalInfo(){
+    let parsed = parser.parseLocation('618 19th Ave, Tuscaloosa, AL, 35401');
+    console.log(parsed);
+    Axios.get(`https://api.precisely.com/demographics-segmentation/v1/demographics/byaddress?address=${parsed.number}%20${parsed.street}%20${parsed.type}%2C%20${parsed.city}%2C%20${parsed.state}&country=USA&valueFormat=PercentAsAvailable&variableLevel=Key`,{
+      headers:{
+        Authorization: 'SECRETS',
+      },
+      body:{
+        type: 'x-www-form-urlencoded',
+        Authorization: 'SECRETS',
+      }
+    })
+    .then((results)=>{
+      console.log(results)
+      /*
+      results.data
+      .themes
+        .employmentTheme.individualValueVariable[2].description === string 'AVG TRAVEL TIME TO WORK'
+        .employmentTheme.individualValueVariable[2].value === Number 'AVG TRAVEL TIME TO WORK'
+        .incomeTheme.individualValueVariable[5].description === string 'Per Household Member Income $'
+        .incomeTheme.individualValueVariable[5].value === Number 'Per Household Member Income $'
+        .employmentTheme.rangeVariable[4].field === ARRAY of Industrys and percentages
       */
     })
     .catch((err)=>{
