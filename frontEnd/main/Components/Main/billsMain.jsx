@@ -13,7 +13,7 @@ const BillsMain = (props) =>{
       </div>
       <div className="expensesBottomContainer">
       {/* Expense Report */}
-      <ExpensesBottom posExpenses={props.expensesArr} negExpenses={props.debitsArr} />
+      <ExpensesBottom posExpenses={props.expensesArr} deleteExpense={props.deleteExpense} negExpenses={props.debitsArr} />
       </div>
     </div>
   )

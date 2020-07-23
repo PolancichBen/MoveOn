@@ -6,7 +6,7 @@ const NegExpensesMap = (props) => (
   props.negExpenses.map((expense,i) => {
     return (
       <div key={i}>
-        <NegExpenseIndiv info={expense} />
+        <NegExpenseIndiv deleteExpense={props.deleteExpense} info={expense} />
       </div>
     )
   })

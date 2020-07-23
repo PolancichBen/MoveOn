@@ -1,12 +1,14 @@
 import React from 'react';
-import Options from './rightMainSubComponents/options.jsx'
+import Options from './rightMainSubComponents/options.jsx';
+import Weather from './rightMainSubComponents/weather.jsx';
 
 const RightMain = (props) =>{
   return (
     <div className="rightMainInnerContainer">
       <div className="weatherAPIContainer">
         {/* Weather Api Area */}
-        Weather API Area
+        <Weather weatherTemp={props.weatherTemp} weatherStatus={props.weatherStatus}/>
+        
       </div>
       <div className="weatherToOptionsSpacer"></div>
       <div className="optionsContainer">

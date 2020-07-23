@@ -5,11 +5,11 @@ import TaxesAndCrime from './localInfoSubComponents/taxesAndCrime.jsx';
 
 
 
-const LocalInfo = () => {
+const LocalInfo = (props) => {
   return (
     <div className="localInfoInnerContainer">
       <div className="localInfoTitle">
-        Local Info Title
+        <p>{props.cityName}</p>
       </div>
       <div className="localInfoReviewsContainer">
         <LocalReviews />

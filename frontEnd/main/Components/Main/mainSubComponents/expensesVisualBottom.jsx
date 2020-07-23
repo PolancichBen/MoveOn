@@ -10,14 +10,14 @@ const ExpensesBottom = (props) =>{
           <p> DEBITS (-) </p>
         </div>
         {/* - map Component */}
-        <NegExpensesMap negExpenses={props.negExpenses}/>
+        <NegExpensesMap deleteExpense={props.deleteExpense} negExpenses={props.negExpenses}/>
       </div>
       <div className="expensesPositiveMapContainer">
         <div>
         <p> CREDITS (+) </p>
         </div>
         {/* + map Component */}
-        <PosExpensesMap posExpenses={props.posExpenses}/>
+        <PosExpensesMap deleteExpense={props.deleteExpense} posExpenses={props.posExpenses}/>
       </div>
     </div>
   )

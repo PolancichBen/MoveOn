@@ -27,6 +27,8 @@ class MainPage extends React.Component{
 
   // Need to handle API Calls Here
 
+
+
   addANewNegative(info){ this.setState({ addNeg:true }) }
   addANewPositive(info){ this.setState({ addPos:true }) }
 
@@ -76,16 +78,16 @@ class MainPage extends React.Component{
       <div className="mainContainer">
         {/* Local Info Component */}
         <div className="localInfoContainer">
-        <LocalInfo />
+        <LocalInfo cityName={this.props.cityName}/>
         </div>
         {/* Bills Component */}
         <div className="billsContainer">
           {/* Need to pass down neg and pos expenses */}
-        <BillsMain salary={this.state.salary} debits={this.state.postives} negative={this.state.negatives} expensesArr={this.state.expensesArr} debitsArr={this.state.debitsArr} />
+        <BillsMain salary={this.state.salary} deleteExpense={this.props.deleteExpense} debits={this.state.postives} negative={this.state.negatives} expensesArr={this.state.expensesArr} debitsArr={this.state.debitsArr} />
         </div>
         {/* Weather, Options, and Move On Component */}
         <div className="rightMainContainer">
-        <RightMain moveOn={this.handleMovingOn} addDebit={this.addANewNegative} addCredit={this.addANewPositive}/>
+        <RightMain moveOn={this.handleMovingOn} addDebit={this.addANewNegative} addCredit={this.addANewPositive} weatherTemp={this.props.weatherTemp} weatherStatus={this.props.weatherStatus}/>
         </div>
       </div>
     )
@@ -96,7 +98,7 @@ class MainPage extends React.Component{
           add pos
           <form onSubmit={(event)=>this.handleExpenseSubmission(event,'Positive')}>
             <label>
-              Name of Debit:
+              Name of Credit:
               <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="name"/>
               <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="debitAmt"/>
             </label>
@@ -110,7 +112,7 @@ class MainPage extends React.Component{
           add neg
           <form onSubmit={(event)=>this.handleExpenseSubmission(event,'Negative')}>
             <label>
-              Name of Credit:
+              Name of Debit:
               <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="name"/>
               <input onChange={(event)=>this.handleExpenseChanges(event.target)} type="text" name="creditAmt"/>
             </label>
