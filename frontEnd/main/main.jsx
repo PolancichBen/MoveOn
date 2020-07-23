@@ -35,7 +35,7 @@ class Main extends React.Component {
       stateTaxRate: 0.04,
       totalTaxRate: 0.1,
 
-      school: [{address: {mainAddressLine: "1400 3RD ST", areaName1: "AL", areaName3: "NORTHPORT", postCode: "35476"},addressType: "Physical",assigned: "false",choice: "false",coextensiv: "false",distance: {unit: "miles", value: "0.8364810212871333"},educationLevel: "M,H",educationLevelDesc: "Middle,High",geometry: {type: "Point", coordinates: Array(2)},gradeLevelsTaught: {pk: "false", kg: "false", first: "false", second: "false", third: "false", …},highestGrade: "12",id: "15029640",lowestGrade: "06",name: "COLLINS-RIVERSIDE MIDDLE SCHOOL",ncesDataYear: "2018",ncesDistrictId: "0103390",ncesSchoolId: "010339001289",phone: "2053422680",schoolDistricts: {ncesDistrictId: "0103390", name: "TUSCALOOSA COUNTY SCHOOL SYSTEM", totalSchools: "35", districtType: "Unified", areaInSqM: "3291340088.54", …},schoolProfile: {blueRibbon: "false", internationalBaccalaureate: "false", titleI: "false", expensePerStudent: "4724", studentBelowPovertyPct: "65.29", …},schoolRanking: (3) [{…}, {…}, {…}],schoolSubType: "R",schoolSubTypeDesc: "Regular",schoolType: "PUB",schoolTypeDesc: "Public",studentTeacherRatio: "20.50",students: "507",teachers: "22.5"}]
+      // school: [{address: {mainAddressLine: "1400 3RD ST", areaName1: "AL", areaName3: "NORTHPORT", postCode: "35476"},addressType: "Physical",assigned: "false",choice: "false",coextensiv: "false",distance: {unit: "miles", value: "0.8364810212871333"},educationLevel: "M,H",educationLevelDesc: "Middle,High",geometry: {type: "Point", coordinates: Array(2)},gradeLevelsTaught: {pk: "false", kg: "false", first: "false", second: "false", third: "false"},highestGrade: "12",id: "15029640",lowestGrade: "06",name: "COLLINS-RIVERSIDE MIDDLE SCHOOL",ncesDataYear: "2018",ncesDistrictId: "0103390",ncesSchoolId: "010339001289",phone: "2053422680",schoolDistricts: {ncesDistrictId: "0103390", name: "TUSCALOOSA COUNTY SCHOOL SYSTEM", totalSchools: "35", districtType: "Unified", areaInSqM: "3291340088.54",},schoolProfile: {blueRibbon: "false", internationalBaccalaureate: "false", titleI: "false", expensePerStudent: "4724", studentBelowPovertyPct: "65.29", …},schoolRanking: (3) [{…}, {…}, {…}],schoolSubType: "R",schoolSubTypeDesc: "Regular",schoolType: "PUB",schoolTypeDesc: "Public",studentTeacherRatio: "20.50",students: "507",teachers: "22.5"}]
     }
     this.passUpLocalAndSalary = this.passUpLocalAndSalary.bind(this);
     this.passUpNewPosAndNewNeg = this.passUpNewPosAndNewNeg.bind(this);
@@ -46,6 +46,8 @@ class Main extends React.Component {
     this.deleteAnExpense = this.deleteAnExpense.bind(this);
     this.getWeather = this.getWeather.bind(this);
     this.getTaxes = this.getTaxes.bind(this);
+    this.getSchools = this.getSchools.bind(this);
+    this.getCrime = this.getCrime.bind(this);
   }
 
   //////////////////////////////////////////////////
@@ -94,7 +96,7 @@ class Main extends React.Component {
       // })
     })
     .then(()=>{
-      // this.getSchools()
+      // this.getCrime()
     })
     .catch((err)=>{
       console.log('Issue with Get Req',err)
@@ -147,7 +149,7 @@ class Main extends React.Component {
 
   getSchools(){
     // let parsed = parser.parseLocation('618 19th Ave, Tuscaloosa, AL, 35401');
-    console.log(parsed);
+    // console.log(parsed);
     // https://api.precisely.com/schools/v1/school/byaddress?address=618%2019th%20ave%2Ctuscaloosa%2Cal%2C35041&schoolType=PUB&schoolSubType=R&searchRadius=10&searchRadiusUnit=miles&assignedSchoolsOnly=N&districtSchoolsOnly=N&maxCandidates=10`
     Axios.get(`https://api.precisely.com/schools/v1/school/byaddress?address=${parsed.number}%20${parsed.street}%20${parsed.type}%2C${parsed.city}%2C${parsed.state}%2C${parsed.zip}&schoolType=PUB&schoolSubType=R&searchRadius=10&searchRadiusUnit=miles&assignedSchoolsOnly=N&districtSchoolsOnly=N&maxCandidates=5`,{
       headers:{
@@ -174,6 +176,30 @@ class Main extends React.Component {
     })
     .catch((err)=>{
       console.log('error in getting schools',err)
+    })
+  }
+
+  getCrime(){
+    let parsed = parser.parseLocation('618 19th Ave, Tuscaloosa, AL, 35401');
+    console.log(parsed);
+    Axios.get(`https://api.precisely.com/risks/v1/crime/byaddress?address=${parsed.number}%20${parsed.street}%20${parsed.type}%2C${parsed.city}%2C${parsed.state}%2C${parsed.zip}&type=all&includeGeometry=N`,{
+      headers:{
+        Authorization: 'SECRRETS',
+      },
+      body:{
+        type: 'x-www-form-urlencoded',
+        Authorization: 'SECRETS',
+      }
+    })
+    .then((results)=>{
+      console.log(results)
+      /*
+      results.data
+      .themes[0].crimeIndexTheme.indexVariable[0].category //returns string of level of crime
+      */
+    })
+    .catch((err)=>{
+      console.log(err)
     })
   }
 
