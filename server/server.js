@@ -3,22 +3,32 @@ const app = express();
 const path = require('path');
 const PORT = '8008';
 const weather = require('openweather-apis');
+const { weatherAPIkey } = require('../config');
+const { Client } = require('pg');
+const client = new Client();
+
+
+client.connect((err) => {
+  if (err) {
+    console.log('error in db hookup', err)
+    return
+  }
+  console.log('PostGres Runnin')
+})
+
 
 app.use(express.static(path.join(__dirname, '../frontEnd/dist')));
 app.use(express.json())
 
 //weather tool
-var weatherAPIkey = '5f96734f780f0c45fae637427fb90440';
 weather.setLang('en');
 weather.setUnits('imperial');
 weather.setAPPID(weatherAPIkey)
 
-
-
 app.get('/weather', (req, res) => {
   console.log(req.query.zip)
-   //need to send zipcode, or city, or use googles coordinate thing
-   let zip = req.query.zip;
+  //need to send zipcode, or city, or use googles coordinate thing
+  let zip = req.query.zip;
   weather.setZipCode(zip);
   // weather.getAllWeather((err, JSONObj) => {
   //   if (err) {
@@ -28,8 +38,21 @@ app.get('/weather', (req, res) => {
   //     res.status(200).send(JSONObj)
   //   }
   // })
+  res.status(200).send('ok')
 })
 
+
+app.get('/users', (req, res) => {
+  client.query('Select * from users', (err, results) => {
+    if (err) {
+      console.log(err)
+      res.status(400)
+    } else {
+      console.log(results)
+      res.status(200).send(results)
+    }
+  })
+})
 
 app.listen(PORT, () => {
   console.log(`server is CONNECTED on PORT:${PORT}`);
