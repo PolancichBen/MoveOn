@@ -18,11 +18,11 @@ const IntroFormEntry = (props) => {
           {/* Location */}
           <div className="introButtonMainContainer">
             <div className="introButtonContainers">
-              <input className="introFormInput" onChange={(event) => props.salaryAndLocal(event.target)} type="text" name="location" defaultValue="ZipCode" />
+              <input className="introFormInput" onChange={(event) => props.salaryAndLocal(event.target)} type="text" name="location" placeholder="Address" />
               {/* Salary */}
             </div>
             <div className="introButtonContainers">
-              <input className="introFormInput" onChange={(event) => props.salaryAndLocal(event.target)} type="text" name="salary" defaultValue="Salary" />
+              <input className="introFormInput" onChange={(event) => props.salaryAndLocal(event.target)} type="text" name="salary" placeholder="Salary" />
             </div>
           </div>
         </label>

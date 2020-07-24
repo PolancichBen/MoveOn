@@ -1,14 +1,14 @@
 import React from 'react';
 
 const ExpensesHeader = (props) => {
-  console.log(props)
+  // console.log('Expense Header Props',props)
   return (
     <div className="expensesMain">
           {/* Constants */}
         <div className="constantBillsMain">
           {/* Plus Total */}
           <div className="constant pos">
-            <span>${(props.positive + props.debits)}</span>
+            <span>${(parseInt(props.positive) + parseInt(props.debits))}</span>
           </div>
           {/* Minus Total */}
           <div className="constant neg">

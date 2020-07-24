@@ -6,7 +6,7 @@ const PosExpensesMap = (props) => (
   props.posExpenses.map((expense,i) => {
     return (
       <div key={i} className="posMapContainer">
-        <PosExpenseIndiv deleteExpense={props.deleteExpense} info={expense} />
+        <PosExpenseIndiv index={i} deleteExpense={props.deleteExpense} info={expense} />
       </div>
     )
   })

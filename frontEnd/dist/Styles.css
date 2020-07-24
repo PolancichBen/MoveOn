@@ -280,7 +280,7 @@ body{
 }
 
 .industryMapContainer{
-  margin: 15px 0px;
+  margin: 10px 0px;
 }
 
 .averageInfoMain{
@@ -425,6 +425,39 @@ body{
   border-radius: 20px;
 }
 
+.newExpenseWrap{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+}
+
+.newExpenseInnerTitle{
+  font-size: 40px;
+  font-style: italic;
+  margin-bottom: 10%;
+}
+
+.newExpenseTextContainer{
+  width: 100%;
+}
+
+.newExpenseTextField{
+  margin: 15px 0px;
+}
+
+.newExpenseInput{
+
+}
+
 /* //////////////////////// */
 /* // Beginning Of MoveOn //// */
 /* //////////////////////// */
@@ -470,9 +503,6 @@ body{
   padding: 20px 100px;
   border-radius: 30px;
   font-size: 20px;
-}
-
-.moveMainCSV{
 }
 
 .moveMainCSVBtn{

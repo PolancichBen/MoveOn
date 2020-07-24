@@ -3,6 +3,7 @@ import ExpensesHeader from './mainSubComponents/expensesHeader.jsx';
 import ExpensesBottom from './mainSubComponents/expensesVisualBottom.jsx';
 
 const BillsMain = (props) =>{
+  // console.log('Bills Props',props)
   return (
     <div>
       <div className="expensesHeader">

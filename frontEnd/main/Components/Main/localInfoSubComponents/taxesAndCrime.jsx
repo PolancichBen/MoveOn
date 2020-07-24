@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TaxesAndCrime = (props) =>{
-  console.log('Taxes And crime props',props)
+  // console.log('Taxes And crime props',props)
   return (
     <div className="taxesAndCrimeMainContainer">
       <div className="taxesAndCrimeTitle">Taxes and Crime Title</div>

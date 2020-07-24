@@ -3,7 +3,7 @@ import AverageInfo from './localInfoSubComponents/averageInfo.jsx';
 import IndustryMap from './localInfoSubComponents/industriesMap.jsx';
 
 const LocalReviews = (props) => {
-  console.log('Local Information Props', props)
+  // console.log('Local Information Props', props)
   return (
     <div className="localReviewsInnerMain">
       <div className="localReviewsTitle">Travel and Income Information</div>

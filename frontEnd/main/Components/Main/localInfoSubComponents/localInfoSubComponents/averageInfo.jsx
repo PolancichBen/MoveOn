@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AverageInfo = (props) =>{
-  console.log('Average Info Props',props)
+  // console.log('Average Info Props',props)
   // let moneyDescription = props.avgs[2].subString(0,28) ? props : 'Waiting';
   // let money = parseInt(props.avgs[3]).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) ? props : 'Waiting';
   return (

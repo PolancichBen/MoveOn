@@ -5,7 +5,7 @@ const financial=(x)=>{
 }
 
 const Schools = (props) =>{
-  console.log('Schools Props',props)
+  // console.log('Schools Props',props)
   return (
     <div className="schoolInnerMain">
       <div className="schoolName"><span>{props.info.name}</span></div>
