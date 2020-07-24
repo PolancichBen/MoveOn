@@ -16,10 +16,12 @@ const RightMain = (props) =>{
         <Options addDebit={props.addDebit} addCredit={props.addCredit}/>
       </div>
       <div className="optionsToMoveOnBTNSpacer"></div>
-      <div className="moveOnBtn">
+      <div className="moveOnBtnContainer">
         {/* Move On Button */}
-        Move On BTN
-        <button onClick={(event)=>props.moveOn(event)}>Move On!</button>
+        <div className="moveOnTitle">
+        Ready To Move On?
+        </div>
+        <button className="moveOnBtn" onClick={(event)=>props.moveOn(event)}>Move On!</button>
       </div>
     </div>
   )

@@ -2,15 +2,17 @@ import React from 'react';
 
 const Options = (props) =>{
   return (
-    <div>
-      <div>
-      Options Title Go!
+    <div className="optionsContainer">
+      <div className="optionsTitle">
+      Add your Bills, Rent, Insurances and Credits
       </div>
-      <div>
-        <button onClick={()=>props.addCredit()}> Add a New Credit or (+)</button>
+      <div className="optionsButtonsContainer">
+      <div className="optionsButtonMain">
+        <button className="optionsButton" onClick={()=>props.addCredit()}> Add a New Credit or (+)</button>
       </div>
-      <div>
-        <button onClick={()=>props.addDebit()}> Add a New Debit/Bill or (-)</button>
+      <div className="optionsButtonMain">
+        <button className="optionsButton" onClick={()=>props.addDebit()}> Add a New Debit/Bill or (-)</button>
+      </div>
       </div>
     </div>
   )

@@ -3,10 +3,9 @@ import React from 'react';
 
 const Weather = (props) =>{
   return (
-    <div>
-      <div><span>Current Local Weather</span></div>
-      <div><span>{props.weatherTemp}</span></div>
-      <div><span>{props.weatherStatus}</span></div>
+    <div className="weatherContainer">
+      <div className="weatherContainerTitle">Current Local Weather</div>
+      <div className="weatherContent"> <span className="weatherContainerStatus">{props.weatherStatus}</span><span className="weatherContainerTemp">{props.weatherTemp}</span></div>
     </div>
   )
 }
