@@ -6,6 +6,7 @@ import TaxesAndCrime from './localInfoSubComponents/taxesAndCrime.jsx';
 
 
 const LocalInfo = (props) => {
+  console.log('Local Info Main props',props)
   return (
     <div className="localInfoInnerContainer">
       <div className="localInfoTitle">

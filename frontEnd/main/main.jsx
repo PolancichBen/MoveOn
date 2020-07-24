@@ -13,35 +13,24 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      opening: false,
-      main: true,
+      opening: true,
+      main: false,
+      waiting: true,
       closing: false,
-
       loggedin: false,
       signedUp: false,
-
       mainSalary: 100000,
       postives: 0,
-
       mainNeg: 5000,
-
       mainZipLocation: 35401,
       weatherStatus: 'Clear',
       coordinates: { lat: 33.2, lon: -87.56 },
       temperature: 87,
       cityName: 'Tuscaloosa',
-
-      taxInformation: [],
-
-      schoolInfoArray: [],
-
-      crimeLevel: 'High',
-
-      localInformation: [],
-
-
-
-      // school: [{address: {mainAddressLine: "1400 3RD ST", areaName1: "AL", areaName3: "NORTHPORT", postCode: "35476"},addressType: "Physical",assigned: "false",choice: "false",coextensiv: "false",distance: {unit: "miles", value: "0.8364810212871333"},educationLevel: "M,H",educationLevelDesc: "Middle,High",geometry: {type: "Point", coordinates: Array(2)},gradeLevelsTaught: {pk: "false", kg: "false", first: "false", second: "false", third: "false"},highestGrade: "12",id: "15029640",lowestGrade: "06",name: "COLLINS-RIVERSIDE MIDDLE SCHOOL",ncesDataYear: "2018",ncesDistrictId: "0103390",ncesSchoolId: "010339001289",phone: "2053422680",schoolDistricts: {ncesDistrictId: "0103390", name: "TUSCALOOSA COUNTY SCHOOL SYSTEM", totalSchools: "35", districtType: "Unified", areaInSqM: "3291340088.54",},schoolProfile: {blueRibbon: "false", internationalBaccalaureate: "false", titleI: "false", expensePerStudent: "4724", studentBelowPovertyPct: "65.29", …},schoolRanking: (3) [{…}, {…}, {…}],schoolSubType: "R",schoolSubTypeDesc: "Regular",schoolType: "PUB",schoolTypeDesc: "Public",studentTeacherRatio: "20.50",students: "507",teachers: "22.5"}]
+      taxInformation: [0.03,0.03,0.04,0.1],
+      schoolInfoArray: [{ distance:{value:"0.83547826"}, educationLevel:"M,H", name:"COLLINS-RIVERSIDE MIDDLE SCHOOL"},{distance:{value:"0.83547826"}, educationLevel:"M,H", name:"COLLINS-RIVERSIDE MIDDLE SCHOOL"},{distance:{value:"0.83547826"}, educationLevel:"M,H", name:"COLLINS-RIVERSIDE MIDDLE SCHOOL"},{distance:{value:"0.83547826"}, educationLevel:"M,H", name:"COLLINS-RIVERSIDE MIDDLE SCHOOL"},{distance:{value:"0.83547826"}, educationLevel:"M,H", name:"COLLINS-RIVERSIDE MIDDLE SCHOOL"}],
+      crimeLevel: 'Highest',
+      localInformation: ["Average Travel Time (In Minutes) To Work","14.7","Per Household Member Income $","49875",[{value: "0", name: "IN01AGRCX", description: "% Agriculture, Forestry, Fishing And Hunting, And Mining"},{value: "2.27", name: "IN02CNSTCX", description: "% Construction"},{value: "1.92", name: "IN04WTRDCX", description: "% Wholesale Trade"},{value: "11.01", name: "IN05RTRDCX", description: "% Retail Trade"},{value: "0", name: "IN06TRANCX", description: "% Transportation And Warehousing, And Utilities"},{value: "0", name: "IN07INFOCX", description: "% Information"},{value: "6.99", name: "IN08FIRECX", description: "% Finance, Insurance, Real Estate, And Rental And Leasing"},{value: "2.62", name: "IN09PROFCX", description: "% Professional, Scientific, And Management"},{value: "36.71", name: "IN10EDUCCX", description: "% Educational Services, Health Care And Social Assistance"},{value: "26.4", name: "IN11ARTSCX", description: "% Arts, Entertainment, Accommodation And Food Services"},{value: "4.37", name: "IN12OTHSCX", description: "% Other Services, Except Public Administration"},{value: "0", name: "IN13PUBLCX", description: "% Public Administration"}]],
     }
     this.passUpLocalAndSalary = this.passUpLocalAndSalary.bind(this);
     this.passUpNewPosAndNewNeg = this.passUpNewPosAndNewNeg.bind(this);
@@ -92,11 +81,16 @@ class Main extends React.Component {
   }
 
   getAllInfo() {
-    const getAllPromise = (new Promise(()=>this.getWeather()))
+    new Promise(()=>{this.getWeather()})
       .then(this.getTaxes())
       .then(this.getSchools())
       .then(this.getCrime())
       .then(this.getLocalInfo())
+      .then(
+        this.setState({
+          waiting: false,
+        })
+      )
       .catch((err) => { console.log('Issue on data intake', err) })
   }
 
@@ -135,11 +129,11 @@ class Main extends React.Component {
     'https://api.precisely.com/localtax/v1/taxrate/General/byaddress?address=35401'
     Axios.get(`https://api.precisely.com/localtax/v1/taxrate/General/byaddress?address=${parseInt(app.state.mainZipLocation)}`, {
       headers: {
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       },
       body: {
         type: 'x-www-form-urlencoded',
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       }
     })
       .then((results) => {
@@ -165,11 +159,11 @@ class Main extends React.Component {
     console.log('Schools Fired');
     Axios.get(`https://api.precisely.com/schools/v1/school/byaddress?address=${parsed.number}%20${parsed.street}%20${parsed.type}%2C${parsed.city}%2C${parsed.state}%2C${parsed.zip}&schoolType=PUB&schoolSubType=R&searchRadius=10&searchRadiusUnit=miles&assignedSchoolsOnly=N&districtSchoolsOnly=N&maxCandidates=5`, {
       headers: {
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       },
       body: {
         type: 'x-www-form-urlencoded',
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       }
     })
       .then((results) => {
@@ -195,11 +189,11 @@ class Main extends React.Component {
     console.log('Crime Fired');
     Axios.get(`https://api.precisely.com/risks/v1/crime/byaddress?address=${parsed.number}%20${parsed.street}%20${parsed.type}%2C${parsed.city}%2C${parsed.state}%2C${parsed.zip}&type=all&includeGeometry=N`, {
       headers: {
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       },
       body: {
         type: 'x-www-form-urlencoded',
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       }
     })
       .then((results) => {
@@ -222,11 +216,11 @@ class Main extends React.Component {
     console.log('Local Info Fired');
     Axios.get(`https://api.precisely.com/demographics-segmentation/v1/demographics/byaddress?address=${parsed.number}%20${parsed.street}%20${parsed.type}%2C%20${parsed.city}%2C%20${parsed.state}&country=USA&valueFormat=PercentAsAvailable&variableLevel=Key`, {
       headers: {
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       },
       body: {
         type: 'x-www-form-urlencoded',
-        Authorization: 'SECRET',
+        Authorization: 'Secret',
       }
     })
       .then((results) => {
@@ -304,7 +298,7 @@ class Main extends React.Component {
           <Opening sendUpSalAndLocal={this.passUpLocalAndSalary} />
         </div>
       )
-    } else if (this.state.main) {
+    } else if (this.state.main && this.state.waiting === false) {
       return (
         <div>
           <MainPage
@@ -323,6 +317,13 @@ class Main extends React.Component {
             crimeLevel={this.state.crimeLevel}
             localInformation={this.state.localInformation}
           />
+        </div>
+      )
+    } else if (this.state.main && this.state.waiting === true){
+      this.getAllInfo()
+      return(
+        <div>
+          standby
         </div>
       )
     } else if (this.state.closing) {

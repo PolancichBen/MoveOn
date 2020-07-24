@@ -1,14 +1,15 @@
 import React from 'react';
+import IndivIndustry from './indivIndustry.jsx'
 
-const IndustryMap = (props) =>{
-  console.log('Industries Props',props)
-  return (
-    <div>
-      Industries GO!
-    <div>{/* Average Info */}</div>  
-    <div>{/* Industries map */}</div>
-    </div>
-  )
-}
+const IndustryMap = (props) =>(
+  console.log('Industry props',props),
+  props.industryInfo.map((industry,i)=>{
+    return (
+      <div key={i}>
+        <IndivIndustry info={industry} />
+      </div>
+    )
+  })
+)
 
 export default IndustryMap;

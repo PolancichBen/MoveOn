@@ -26,9 +26,6 @@ class MainPage extends React.Component{
   }
 
   // Need to handle API Calls Here
-  componentDidMount(){
-    // this.props.getAllInfo();
-  }
 
 
   addANewNegative(info){ this.setState({ addNeg:true }) }

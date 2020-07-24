@@ -1,12 +1,14 @@
 import React from 'react';
 
+
 const IndivIndustry = (props) =>{
   console.log('Indiv Industries Props',props)
+  let description = props.info.description.substring(2);
+  let percent = parseInt(props.info.value);
   return (
     <div>
-      Indiv Industries GO!
-    <div>{/* Average Info */}</div>  
-    <div>{/* Industries map */}</div>
+      <span>{description}</span>
+      <span>{percent}</span>
     </div>
   )
 }

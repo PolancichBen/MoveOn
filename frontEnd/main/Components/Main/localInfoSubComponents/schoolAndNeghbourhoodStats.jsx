@@ -1,7 +1,7 @@
 import React from 'react';
 import Schools from './localInfoSubComponents/schools.jsx'
 
-const SchoolAndNeighbourhood = (props) =>{
+const SchoolAndNeighbourhood = (props) =>(
   props.schools.map((school,i)=>{
     return (
       <div key={i}>
@@ -9,6 +9,6 @@ const SchoolAndNeighbourhood = (props) =>{
       </div>
     )
   })
-}
+)
 
 export default SchoolAndNeighbourhood;

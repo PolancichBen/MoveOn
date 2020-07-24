@@ -8,9 +8,9 @@ const Schools = (props) =>{
   console.log('Schools Props',props)
   return (
     <div>
-      <div><span>{props.name}</span></div>
-      <div><span>{props.educationLevel}</span></div>
-      <div><span>{(financial(props.distance.value))} Miles</span></div>
+      <div><span>{props.info.name}</span></div>
+      <div><span>{props.info.educationLevel}</span></div>
+      <div><span>{(financial(props.info.distance.value))} Miles</span></div>
     </div>
   )
 }
