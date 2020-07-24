@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const Weather = (props) =>{
+  // console.log('Weather Props',props)
   return (
     <div className="weatherContainer">
       <div className="weatherContainerTitle">Current Local Weather</div>

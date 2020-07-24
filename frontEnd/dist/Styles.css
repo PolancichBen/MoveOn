@@ -67,7 +67,7 @@ body{
 /* // Beginning Of Main //// */
 /* //////////////////////// */
 .mainContainer{
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: flex;
   width: 100%;
   height: 100%;
@@ -75,30 +75,30 @@ body{
 }
 
 .localInfoContainer{
-  border: 2px dashed red;
+  /* border: 2px dashed red; */
   height: 100%;
   width: 25%;
 }
 
 .billsContainer{
-  border: 2px dashed blue;
+  border: 1px solid black;
   width: 50%;
   height: 100%;
 }
 
 .rightMainContainer{
-  border: 2px dashed yellow;
+  /* border: 2px dashed yellow; */
   height: 100%;
   width: 25%;
 }
 
 .expensesHeader{
-  border: 2px dashed red;
+  /* border: 2px dashed red; */
   width: 100%;
 }
 
 .expensesMain{
-  border: 2px solid black;
+  border: 1px solid black;
   display: flex;
   height: 200px;
   width: 100%;
@@ -106,14 +106,14 @@ body{
 }
 
 .constantBillsMain{
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
 .constant{
-  border: 2px dashed palevioletred;
+  /* border: 2px dashed palevioletred; */
   height: 50%;
   width: 100%;
   display: flex;
@@ -131,7 +131,7 @@ body{
 }
 
 .dynamicBillsMain{
-  border: 2px solid blueviolet;
+  /* border: 2px solid blueviolet; */
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -139,7 +139,7 @@ body{
 }
 
 .dynamic{
-  border: 2px dashed greenyellow;
+  /* border: 2px dashed greenyellow; */
   height: 25%;
   width: 100%;
   display: flex;
@@ -154,25 +154,25 @@ body{
 }
 
 .expensesBottomContainer{
-  border: 2px dashed green;
+  /* border: 2px dashed green; */
   width: 100%;
 }
 
 .expensesContainer{
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   display: flex;
   height: 500px;
   width: 100%;
 }
 
 .expensesNegativeMapContainer{
-  border: 2px dashed red;
+  border: 1px solid black;
   width: 50%;
   height: 100%;
 }
 
 .expensesPositiveMapContainer{
-  border: 2px dashed green;
+  border: 1px solid black;
   width: 50%;
   height: 100%;
 }
@@ -185,7 +185,7 @@ body{
 }
 
 .weatherAPIContainer{
-  border: 2px dashed red;
+  border: 1px solid black;
   height: 60px;
   width: 100%;
 
@@ -197,7 +197,7 @@ body{
 }
 
 .optionsContainer{
-  border: 2px dashed blue;
+  /* border: 2px dashed blue; */
   height: 450px;
   width: 100%;
 }
@@ -208,20 +208,20 @@ body{
 }
 
 .moveOnBtnContainer{
-  border: 2px dashed green;
+  /* border: 2px dashed green; */
   height: 65px;
   width: 100%;
   text-align: center;
 }
 
 .localInfoInnerContainer{
-  border: 2px dashed green;
+  /* border: 2px dashed green; */
   height: 100%;
   width: 100%;
 }
 
 .localInfoTitleContainer{
-  border: 2px dashed purple;
+  border: 1px solid black;
   width: 100%;
   height: 50px;
   text-align: center;
@@ -230,19 +230,19 @@ body{
 }
 
 .localInfoReviewsContainer{
-  border: 2px dashed gold;
+  /* border: 2px dashed gold; */
   width: 100%;
   height: 600px;
 }
 
 .localInfoSchoolAndNeighbourHoodContainer{
-  border: 2px dashed blue;
+  /* border: 2px dashed blue; */
   width: 100%;
   height: 405px;
 }
 
 .localInfoTaxesAndCrimeContainer{
-  border: 2px dashed cyan;
+  border: 1px solid black;
   width: 100%;
   height: 191px;
   text-align: center;
