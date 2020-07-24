@@ -68,6 +68,14 @@ body{
   font-size: 45px;  
 }
 
+.pos{
+  background-color: lightgreen;
+}
+
+.neg{
+  background-color: palevioletred;
+}
+
 .dynamicBillsMain{
   border: 2px solid blueviolet;
   display: flex;
@@ -80,6 +88,10 @@ body{
   border: 2px dashed greenyellow;
   height: 25%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
 
 .spacer{
@@ -182,10 +194,6 @@ body{
   text-align: center;
 }
 
-.localInfoTitle{
-
-}
-
 .localReviewsInnerMain{
   display: flex;
   flex-direction: column;
@@ -235,9 +243,6 @@ body{
   font-style: italic;
 }
 
-.indivIndustryInnerContainer{
-  
-}
 
 .indivIndustryDescription{
   font-weight: bold;
@@ -250,10 +255,6 @@ body{
 
 .schoolContainer{
   margin: 12px 0px;
-}
-
-.schoolInnerMain{
-
 }
 
 .schoolTitle{
@@ -275,16 +276,11 @@ body{
 .schoolEDLevels{
   text-align: center;
   text-decoration: underline;
-
 }
 
 .schoolDistance{
   text-align: center;
   font-size: small;
-}
-
-.taxesAndCrimeMainContainer{
-
 }
 
 .taxesAndCrimeTitle{
@@ -304,6 +300,15 @@ body{
   font-weight: bold;
 }
 
-.taxesAndCrimePercent{
+.bottomExpenseTitles{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  border: 2px solid black;
+}
 
+.mapInnerMain{
+  margin: 10px 0px;
+  font-size: 20px;
 }
