@@ -62,6 +62,10 @@ body{
   border: 2px dashed palevioletred;
   height: 50%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;  
 }
 
 .dynamicBillsMain{
@@ -150,10 +154,13 @@ body{
   width: 100%;
 }
 
-.localInfoTitle{
+.localInfoTitleContainer{
   border: 2px dashed purple;
   width: 100%;
-  height: 40px;
+  height: 50px;
+  text-align: center;
+  font-size: 45px;
+  font-style: italic;
 }
 
 .localInfoReviewsContainer{
@@ -165,11 +172,138 @@ body{
 .localInfoSchoolAndNeighbourHoodContainer{
   border: 2px dashed blue;
   width: 100%;
-  height: 300px;
+  height: 405px;
 }
 
 .localInfoTaxesAndCrimeContainer{
   border: 2px dashed cyan;
   width: 100%;
-  height: 305px;
+  height: 191px;
+  text-align: center;
+}
+
+.localInfoTitle{
+
+}
+
+.localReviewsInnerMain{
+  display: flex;
+  flex-direction: column;
+}
+
+.localReviewsTitle{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+.localReviewsAverageContainer{
+  text-align: center;
+}
+
+.localReviewsIndustryMapContainerTitle{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.localReviewsIndustryMapContainer{
+  text-align: center;
+}
+
+.industryMapContainer{
+  margin: 15px 0px;
+}
+
+.averageInfoMain{
+  border: 1px solid black;
+}
+
+.averageInfoTitle{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.averageInfoDescription{
+  padding-bottom: 10px;
+  font-style: italic;
+}
+
+.indivIndustryInnerContainer{
+  
+}
+
+.indivIndustryDescription{
+  font-weight: bold;
+  font-size: 16;
+}
+
+.indivIndustryPercent{
+  font-style: italic;
+}
+
+.schoolContainer{
+  margin: 12px 0px;
+}
+
+.schoolInnerMain{
+
+}
+
+.schoolTitle{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  border: 1px solid black;
+}
+
+.schoolName{
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.schoolEDLevels{
+  text-align: center;
+  text-decoration: underline;
+
+}
+
+.schoolDistance{
+  text-align: center;
+  font-size: small;
+}
+
+.taxesAndCrimeMainContainer{
+
+}
+
+.taxesAndCrimeTitle{
+  text-align: center;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bolder;
+  border: 1px solid black;
+  text-decoration: underline;
+}
+
+.taxesAndCrimeEach{
+  margin: 10px 0px;
+}
+
+.taxesAndCrimeName{
+  font-weight: bold;
+}
+
+.taxesAndCrimePercent{
+
 }

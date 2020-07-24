@@ -5,7 +5,7 @@ const IndustryMap = (props) =>(
   console.log('Industry props',props),
   props.industryInfo.map((industry,i)=>{
     return (
-      <div key={i}>
+      <div key={i} className="industryMapContainer">
         <IndivIndustry info={industry} />
       </div>
     )

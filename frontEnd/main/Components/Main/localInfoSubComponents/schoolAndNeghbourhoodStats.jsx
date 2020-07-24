@@ -4,7 +4,7 @@ import Schools from './localInfoSubComponents/schools.jsx'
 const SchoolAndNeighbourhood = (props) =>(
   props.schools.map((school,i)=>{
     return (
-      <div key={i}>
+      <div key={i} className="schoolContainer">
         <Schools info={school}/>
       </div>
     )

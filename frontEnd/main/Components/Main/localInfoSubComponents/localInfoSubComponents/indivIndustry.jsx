@@ -6,9 +6,9 @@ const IndivIndustry = (props) =>{
   let description = props.info.description.substring(2);
   let percent = parseInt(props.info.value);
   return (
-    <div>
-      <span>{description}</span>
-      <span>{percent}</span>
+    <div className="indivIndustryInnerContainer">
+      <span className="indivIndustryDescription">{description}</span>
+      <span className="indivIndustryPercent"> {percent}</span>
     </div>
   )
 }

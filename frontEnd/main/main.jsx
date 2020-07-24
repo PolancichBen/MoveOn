@@ -13,8 +13,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      opening: true,
-      main: false,
+      opening: false,
+      main: true,
       waiting: true,
       closing: false,
       loggedin: false,
