@@ -1,23 +1,25 @@
 import React from 'react';
 
-const Move = (props) =>{
+const Move = (props) => {
   return (
-    <div>
-      <div>
+    <div className="moveMainContainer">
+      <div className="moveTitleContainer">
         {/* Closing Button Title */}
-        <h1>Time to Move On!</h1>
+        <div className="moveTitle">Time to Move On!</div>
       </div>
-      <div>
-        {/* Start Over Btn */}
-        <button onClick={(event)=>props.startOver(event)}> Start Over </button>
+      <div className="moveMainTwoBtnContainer">
+        <div className="moveMainTwoBtnMain">
+          {/* Start Over Btn */}
+          <button className="moveMainTwoBtn" onClick={(event) => props.startOver(event)}> Start Over </button>
+        </div>
+        <div className="moveMainTwoBtnMain">
+          {/* Change Location Button */}
+          <button className="moveMainTwoBtn" onClick={(event) => props.changeLocal(event)}>Change Location</button>
+        </div>
       </div>
-      <div>
+      <div className="moveMainCSV">
         {/* Download as .Csv Btn */}
-        <button onClick={(event)=>props.cSV(event)}> Download as .CSV </button>
-      </div>
-      <div>
-        {/* Change Location Button */}
-        <button onClick={(event)=>props.changeLocal(event)}>Change Location</button>
+        <button className="moveMainCSVBtn" onClick={(event) => props.cSV(event)}> Download as .CSV </button>
       </div>
     </div>
   )

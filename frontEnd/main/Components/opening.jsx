@@ -9,19 +9,19 @@ class Opening extends React.Component {
       login: false,
     };
     this.handleIncomingSalaryAndLocationData = this.handleIncomingSalaryAndLocationData.bind(this);
-    this.loginPressed = this.loginPressed.bind(this);
+    // this.loginPressed = this.loginPressed.bind(this);
     this.sendDataUp = this.sendDataUp.bind(this);
   }
 
-  loginPressed(event){
-    event.preventDefault();
-    this.setState({
-      login: true,
-      salary: null,
-      Location: null,
-      zipCode: null,
-    })
-  }
+  // loginPressed(event){
+  //   event.preventDefault();
+  //   this.setState({
+  //     // login: true,
+  //     salary: null,
+  //     Location: null,
+  //     zipCode: null,
+  //   })
+  // }
 
   handleIncomingSalaryAndLocationData(event){
     if (event.name === 'location'){
@@ -48,14 +48,14 @@ class Opening extends React.Component {
     if (this.state.login === false) {
       return (
         <div>
-          <div>Opening Title!</div>
+          <div className="moveOnTitleMain">Move On</div>
           <div>
             {/* Form Input Component */}
             <IntroFormEntry salaryAndLocal={this.handleIncomingSalaryAndLocationData} sendItUp={this.sendDataUp} />
           </div>
-          <div>
+          {/* <div>
             <button onClick={(event)=>this.loginPressed(event)}> Login </button>
-          </div>
+          </div> */}
         </div>
       );
     } else {

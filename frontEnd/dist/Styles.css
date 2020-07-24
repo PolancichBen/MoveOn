@@ -12,6 +12,60 @@ body{
   padding: 0;
 }
 
+/* //////////////////////// */
+/* // Beginning Of Opening //// */
+/* //////////////////////// */
+
+.openingMain{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.moveOnTitleMain{
+  font-size: 135px;
+  font-family: cursive;
+  margin-bottom: 40%;
+}
+
+.introDescriptor{
+  font-size: 30px;
+  font-style: italic;
+  margin-bottom: 3%;
+}
+
+.introButtonMainContainer{
+  display: flex;
+  justify-content: center;
+  text-align-last: center;
+  margin-bottom: 12px;
+}
+
+.introButtonContainers{
+  margin: 8px 25px;
+}
+
+.introFormInput{
+  width: 100%;
+  padding: 15px 0px;
+}
+
+.introFormSubmit{
+  padding: 25px 100px;
+  border-radius: 20px;
+}
+
+/* //////////////////////// */
+/* // Beginning Of Main //// */
+/* //////////////////////// */
 .mainContainer{
   border: 2px solid green;
   display: flex;
@@ -313,10 +367,6 @@ body{
   font-size: 20px;
 }
 
-.weatherContainer{
-
-}
-
 .weatherContent{
   text-align: center;
   margin: 10px 0px;
@@ -335,10 +385,6 @@ body{
 
 .weatherContainerStatus{
   margin: 0px 20px;
-}
-
-.optionsContainer{
-
 }
 
 .optionsTitle{
@@ -377,4 +423,60 @@ body{
   margin-top: 5px;
   padding: 8px 20px;
   border-radius: 20px;
+}
+
+/* //////////////////////// */
+/* // Beginning Of MoveOn //// */
+/* //////////////////////// */
+
+.moveMainContainer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align-last: center;
+}
+
+.moveTitleContainer{
+  width: 100%;
+  height: 25%;
+}
+
+.moveTitle{
+  font-size: 50px;
+  font-style: italic;
+}
+
+.moveMainTwoBtnContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.moveMainTwoBtnMain{
+  margin: 0px 70px;
+}
+
+.moveMainTwoBtn{
+  padding: 20px 100px;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.moveMainCSV{
+}
+
+.moveMainCSVBtn{
+  padding: 20px 100px;
+  border-radius: 30px;
+  font-size: 20px;
 }

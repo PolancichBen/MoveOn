@@ -14,9 +14,9 @@ class Main extends React.Component {
     super(props)
     this.state = {
       opening: false,
-      main: true,
+      main: false,
       waiting: true,
-      closing: false,
+      closing: true,
       loggedin: false,
       signedUp: false,
       mainSalary: 100000,
@@ -294,7 +294,7 @@ class Main extends React.Component {
   render() {
     if (this.state.opening) {
       return (
-        <div>
+        <div className="openingMain">
           <Opening sendUpSalAndLocal={this.passUpLocalAndSalary} />
         </div>
       )
