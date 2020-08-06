@@ -3,7 +3,7 @@ MoveOn is a web application that assists the user in finding resources of a demo
 
 Below you will find the Tech Stack, and API's used.
 _________________________
-VIDEO DEMO
+VIDEO DEMO (Coming Soon)
 _______________________
 # Tech Stack
 MoveOn uses a number of open source projects to work properly:
